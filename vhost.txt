@@ -1,0 +1,12 @@
+<VirtualHost *:80>
+    ServerAdmin webmaster@dummy-host2.example.com
+    DocumentRoot "C:\Users\Papac\Documents\PP24\vjezbaL"
+    ServerName vjezba.xyz
+    ErrorLog "logs/dummy-host2.example.com-error.log"
+    CustomLog "logs/dummy-host2.example.com-access.log" common
+    <Directory "C:\Users\Papac\Documents\PP24\vjezba/">
+        Options FollowSymLinks Indexes
+        AllowOverride All
+        Require all granted
+    </Directory>
+</VirtualHost>
