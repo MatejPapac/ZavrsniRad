@@ -11,34 +11,40 @@ class App
         //echo $ruta;
 
         $djelovi = explode('/',$ruta);
-       // print_r($djelovi);
+        
+        //echo '<pre>';
+        //print_r($djelovi);
+        //echo '</pre>';
 
-       $klasa='';
-       if(isset($djelovi[1]) || $djelovi[1] ===''){
-           $klasa='Index';
-
-       }else{
-           $klasa=ucfirst($djelovi[1]);
-    }
-    $klasa.='Controller';
-    echo $klasa;
-
-    $metoda='';
-    if(isset($djelovi[2]) || $djelovi[2] ===''){
-        $metoda='Index';
-
-    }else{
-        $metoda=($djelovi[2]);
-        echo $klasa . '->' . $metoda . '()';
-
-        if(class_exists($klasa) &&method_exists($klasa,$metoda))
-        {
-
+        $klasa='';
+        if(!isset($djelovi[1]) || $djelovi[1]===''){
+            $klasa='Index';
         }else{
-            echo $klasa . '->' . $metoda . '() ne postoji';
+            $klasa=ucfirst($djelovi[1]);
+        }
+        $klasa .= 'Controller';
+        //echo $klasa;
 
+        $metoda='';
+        if(!isset($djelovi[2]) || $djelovi[2]===''){
+            $metoda='index';
+        }else{
+            $metoda=$djelovi[2];
         }
 
-}
-}
+        //echo $klasa . '->' . $metoda . '()';
+
+        if(class_exists($klasa) && method_exists($klasa,$metoda)){
+            // klasa i metoda postoje, instancirati klasu i pozvati metodu
+            $instanca = new $klasa();
+            $instanca->$metoda();
+        }else{
+            // metoda na klasi ne postoji, obavijestiti korisnika
+            echo $klasa . '->' . $metoda . '() ne postoji';
+        }
+
+        //$kontroler = new IndexController();
+        //$kontroler->index();
+
+    }
 }
