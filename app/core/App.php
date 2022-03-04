@@ -40,17 +40,25 @@ class App
             $instanca->$metoda();
         }else{
             // metoda na klasi ne postoji, obavijestiti korisnika
-            echo $klasa . '->' . $metoda . '() ne postoji';
+        
         }
+        $view = new View();
+        $view->render('error404',[
+            'onoceganema' =>$klasa . '->' . $metoda
+        ]);
+     
 
         //$kontroler = new IndexController();
         //$kontroler->index();
 
     }
 
+
     public static function config($kljuc)
     {
         $config=include BP_APP . 'konfiguracija.php';
         return $config[$kljuc];
     }
+
+
 }
