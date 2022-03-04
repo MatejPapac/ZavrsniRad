@@ -13,6 +13,6 @@ class View
         extract($parametri);
         include_once BP_APP .  'view'. DIRECTORY_SEPARATOR .$phtmlstranica . '.phtml';
         $sadrzaj = ob_get_clean();
-        include_once BP_APP . DIRECTORY_SEPARATOR .'view' . $this->predlozak . '.phtml';
+        include_once BP_APP . 'view'.DIRECTORY_SEPARATOR. $this->predlozak . '.phtml';
     }
 }

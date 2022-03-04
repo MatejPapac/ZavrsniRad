@@ -1,15 +1,22 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='main.js'></script>
-</head>
+
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <?php include_once 'predlosci/head.phtml' ?>
+  </head>
 <body>
-    <?php echo $sadrzaj;?>
+    <?php include_once 'predlosci/izbornik.phtml' ?>
+    <div class="grid-container">
+      <div class="grid-x grid-padding-x">
+        <div class="large-12 cell">
+            <div class="callout" id="program">
+                <?=$sadrzaj?>
+            </div>
+        </div>
+      </div>
+    </div>
     
-</body>
+    <?php include_once 'predlosci/javascript.phtml' ?>
+    <?php include_once 'predlosci/podnozje.phtml' ?>
+  </body>
 </html>
