@@ -70,7 +70,7 @@ alter table rezervacija_mjesto add foreign key (rezervacija) references mjesto(s
 
 # unos operatera
 insert into operater(email,lozinka,ime,prezime, uloga) values
-# lozinka papac
+# lozinka   papac
 ('admin@edunova.hr','$2a$12$fSZf4fcRiekXTX6/.tqWq.1gvACtJPb5oz0JDSYz1ioJA3KVRZw/W','Administrator','Edunova','admin'),
 # lozinka bapac
 ('oper@edunova.hr','$2a$12$/NAoBs.yaFlnqXaJIZBpK.NY4w9sI.DioZMedqRLEnzeuyauR7Yo.','Operater','Edunova','oper');
