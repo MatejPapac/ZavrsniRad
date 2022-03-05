@@ -21,7 +21,14 @@
   <div class="top-bar-right">
     <ul class="menu">
       
-      <li><button type="button" class="button">Prijava</button></li>
+      
+    <li>
+        <?php if(App::autoriziran()):?>
+          <a href="<?=App::config('url')?>login/odjava">Odjavi <?php echo $_SESSION['autoriziran']->ime ?></a>
+        <?php else:?>
+          <a href="<?=App::config('url')?>login/index">Login</a>
+        <?php endif;?>
+      </li>
     </ul>
   </div>
 </div>

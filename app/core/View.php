@@ -1,4 +1,5 @@
 <?php
+
 class View
 {
     private $predlozak;
@@ -7,12 +8,13 @@ class View
     {
         $this->predlozak=$predlozak;
     }
-    public function render ($phtmlstranica,$parametri=[])
+
+    public function render($phtmlStranica,$parametri=[])
     {
         ob_start();
-        extract($parametri);
-        include_once BP_APP .  'view'. DIRECTORY_SEPARATOR .$phtmlstranica . '.phtml';
+        extract($parametri); // od asocijativnog niza kreira varijable
+        include_once BP_APP . 'view' . DIRECTORY_SEPARATOR . $phtmlStranica . '.phtml';
         $sadrzaj = ob_get_clean();
-        include_once BP_APP . 'view'.DIRECTORY_SEPARATOR. $this->predlozak . '.phtml';
+        include_once BP_APP . 'view' .  DIRECTORY_SEPARATOR . $this->predlozak . '.phtml';
     }
 }
