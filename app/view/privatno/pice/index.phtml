@@ -1,0 +1,20 @@
+<table>
+    <thead>
+        <tr>
+            <th>Naziv</th>
+            <th>Cijena</th>
+            <th>Vrsta</th>
+            <th>Akcija</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach($pice as $pica): ?>
+            <tr>
+                <td><?=$pica->naziv?></td>
+                <td><?=$pica->cijena?></td>
+                <td><?=$pica->vrsta?></td>
+                <td></td>
+            </tr>
+        <?php endforeach; ?>
+    </tbody>
+</table>

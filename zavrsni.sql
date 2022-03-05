@@ -88,9 +88,9 @@ values(null,'Cedevita',9.00,1),
 
 
 insert into rezervacija(sifra,datumiVrijeme,osoba,brojRezerviranihMjesta,mjesto,kontakt,napomena)
-values(null,'12-2-2019','Miljenko',12,1,'Goformiljenko@gmail.com','abcd'),
-(null,'13-2-2019','Andrija',8,2,'GoforAndrija@gmail.com','abcd'),
-(null,'14-2-2019','Vjekoslav',24,3,'GoforVjekoslav@gmail.com','abcd');
+values(null,'2022-12-07-18-30-00','Miljenko',12,1,'Goformiljenko@gmail.com','abcd'),
+(null,'2022-12-07-19-30-00','Andrija',8,2,'GoforAndrija@gmail.com','abcd'),
+(null,'2022-12-07-20-30-00','Vjekoslav',24,3,'GoforVjekoslav@gmail.com','abcd');
 
 insert into mjesto (sifra,naziv,brojStolica)
 values(null,'Stol 101','4'),
