@@ -3,7 +3,7 @@
 if($_SERVER['SERVER_ADDR']==='127.0.0.1'){
     $url='http://zavrsni.xyz/';
 }else{
-    $url='';
+    $url='http://www.zr-papac.shop/';
 }
 
 return [
