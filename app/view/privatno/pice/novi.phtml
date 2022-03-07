@@ -1,0 +1,29 @@
+<form action="<?=App::config('url') ?>pice/dodajNovi" method="post">
+<fieldset>
+ <legend>
+     Dodavanje novih Pića
+ </legend>
+</fieldset>
+<label>
+    <h3>Naziv</h3>
+<label for="naziv"></label>
+<input type="number" name="naziv" id="naziv">
+</label>
+<h3>Cijena</h3>
+<label for="Cijena"></label>
+<input type="number" name="cijena" id="cijena">
+<h3>Vrsta</h3>
+<label for="vrsta"></label>
+<input type="text" name="text" id="text">
+
+<div class="grid-x grid-padding-x">
+    <div class="large-4 cell">
+    <a class="alert button expanded"
+    href="<?=App::config('url')?>pice/index">Odustani </a>   
+    </div>
+    <div class="large-8cell"></div>
+    <input type="submit" class="success button expanded" value="Dodaj ">
+</div>
+
+
+</form>

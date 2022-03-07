@@ -15,4 +15,22 @@ class PiceController extends AutorizacijaController
              'css'=>'    <link rel="stylesheet" href="'.App::config('url').'public/css/piceindex.css">'
          ]);
      }
+   public function novi()
+
+   {
+       $this->view->render($this->viewDir. 'novi');
+   }
+
+   public function dodajNovi()
+   {
+       Pice::create($_POST);
+       $this->index();
+
+   }
+    
+     public function brisanje($sifra)
+    {
+        Pice::delete($sifra);
+        $this->index();
+    }
 }

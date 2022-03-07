@@ -32,31 +32,41 @@ class App
             $metoda=$djelovi[2];
         }
 
+        $parametar=null;
+        if(!isset($djelovi[3]) || $djelovi[3]===''){
+            $parametar=null;
+        }else{
+            $parametar=$djelovi[3];
+        }
+
         //echo $klasa . '->' . $metoda . '()';
 
         if(class_exists($klasa) && method_exists($klasa,$metoda)){
             // klasa i metoda postoje, instancirati klasu i pozvati metodu
             $instanca = new $klasa();
-            $instanca->$metoda();
+            if($parametar==null){
+                $instanca->$metoda();
+            }else{
+                $instanca->$metoda($parametar);
+            }
+            
         }else{
             // metoda na klasi ne postoji, obavijestiti korisnika
-        
+            $view = new View();
+            $view->render('error404',[
+                'onoceganema' =>$klasa . '->' . $metoda
+            ]);
+            //echo $klasa . '->' . $metoda . '() ne postoji';
         }
-        $view = new View();
-        $view->render('error404',[
-            'onoceganema' =>$klasa . '->' . $metoda
-        ]);
-     
 
         //$kontroler = new IndexController();
         //$kontroler->index();
 
     }
 
-
     public static function config($kljuc)
     {
-        $config=include BP_APP . 'konfiguracija.php';
+        $config = include BP_APP . 'konfiguracija.php';
         return $config[$kljuc];
     }
     public static function autoriziran()
@@ -67,6 +77,4 @@ class App
 
         return false;
     }
-
-
 }
