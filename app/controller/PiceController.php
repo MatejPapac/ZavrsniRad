@@ -11,7 +11,8 @@ class PiceController extends AutorizacijaController
      {
          //print_r(Pice::read());
          $this->view->render($this->viewDir . 'index',[
-             'pice'=>Pice::read()
+             'pice'=>Pice::read(),
+             'css'=>'    <link rel="stylesheet" href="'.App::config('url').'public/css/piceindex.css">'
          ]);
      }
 }
