@@ -1,14 +1,13 @@
 <?php
 
-if($_SERVER['SERVER_ADDR']==='164.92.76.139/'){
-    $url='http://www.zr-papac.shop/';
+if($_SERVER['SERVER_ADDR']==='127.0.0.1'){
+    $url='http://zavrsni.xyz/';
     $dev=true;
     $baza=[
-        'server'=>'zr-papac.shop',
+        'server'=>'localhost',
         'baza'=>'zavrsni',
-        'korisnik'=>'
-        root@Papac',
-        'lozinka'=>'$Rak95xpt'
+        'korisnik'=>'edunova',
+        'lozinka'=>'edunova'
     ];
 }else{
     $url='http://www.zr-papac.shop/';
@@ -16,8 +15,8 @@ if($_SERVER['SERVER_ADDR']==='164.92.76.139/'){
     $baza=[
         'server'=>'zr-papac.shop',
         'baza'=>'zavrsni',
-        'korisnik'=>'edunova',
-        'lozinka'=>'edunova'
+        'korisnik'=>'Papac',
+        'lozinka'=>'$Rak95xpt'
     ];
 }
 
