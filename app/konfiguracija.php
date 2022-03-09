@@ -1,7 +1,7 @@
 <?php
 
 if($_SERVER['SERVER_ADDR']==='127.0.0.1'){
-    $url='http://zavrsni.xyz/';
+    $url='http://www.zr-papac.shop/';
     $dev=true;
     $baza=[
         'server'=>'localhost',
