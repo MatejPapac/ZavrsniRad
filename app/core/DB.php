@@ -9,6 +9,7 @@ class DB extends PDO
         parent::__construct($dsn,$baza['korisnik'],$baza['lozinka']);
         $this->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,PDO::FETCH_OBJ);
     }
+    
 
     public static function getInstanca()
     {
