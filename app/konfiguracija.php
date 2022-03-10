@@ -18,7 +18,7 @@ switch ($_SERVER['SERVER_ADDR']) {
         $url = 'http://www.zr-papac.shop/';
         $baza = [
             'server' => 'localhost',
-            'database' => 'zavrsni',
+            'baza' => 'zavrsni',
             'korisnik' => 'edunova',
             'lozinka' => 'edunova'
         ];
