@@ -15,8 +15,8 @@ if($_SERVER['SERVER_ADDR']==='127.0.0.1'){
     $baza=[
         'server'=>'localhost',
         'baza'=>'papac_zavrsni',
-        'korisnik'=>'edunova',
-        'lozinka'=>'edunova'
+        'korisnik'=>'root',
+        'lozinka'=>''
     ];
 }
 
