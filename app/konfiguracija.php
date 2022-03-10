@@ -14,7 +14,7 @@ if($_SERVER['SERVER_ADDR']==='127.0.0.1'){
     $dev=false;
     $baza=[
         'server'=>'localhost',
-        'baza'=>'papac_zavrsni',
+        'baza'=>'zavrsni.sql',
         'korisnik'=>'root',
         'lozinka'=>''
     ];
