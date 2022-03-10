@@ -13,7 +13,7 @@ if($_SERVER['SERVER_ADDR']==='127.0.0.1'){
     $url='http://www.zr-papac.shop/';
     $dev=false;
     $baza=[
-        'server'=>'zr-papac.shop',
+        'server'=>'localhost',
         'baza'=>'zavrsni',
         'korisnik'=>'Papac',
         'lozinka'=>'$Rak95xpt'
