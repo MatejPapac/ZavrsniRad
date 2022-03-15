@@ -49,8 +49,8 @@ class Pice
         $izraz = $veza->prepare('
 
                     
-            delete  a.sifra,a.cijena,a.vrsta
-            from pice a inner join vrsta b on
+            delete  
+            from pice a left join vrsta b on
             a.vrsta=b.sifra
             where a.sifra=:sifra
 
