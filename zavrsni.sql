@@ -7,7 +7,7 @@ use zavrsni;
 create table operater(
     sifra           int not null primary key auto_increment,
     email           varchar(50) not null,
-    lozinka         char(60) not null, # čitati https://medium.com/analytics-vidhya/password-hashing-pbkdf2-scrypt-bcrypt-and-argon2-e25aaf41598e
+    lozinka         char(60) not null, 
     ime             varchar(50) not null,
     prezime         varchar(50) not null,
     uloga           varchar(10) not null

@@ -47,11 +47,20 @@ class Pice
     {
         $veza = DB::getInstanca();
         $izraz = $veza->prepare('
-        
-            delete from pice where sifra=:sifra;
+
+                    
+            delete  a.sifra,a.cijena,a.vrsta
+            from pice a inner join vrsta b on
+            a.vrsta=b.sifra
+            where a.sifra=:sifra
+
         
         '); 
         $izraz->execute(['sifra'=>$sifra]);
        
     }
 }
+//delete  a.sifra,a.cijena,a.vrsta
+//from pice a inner join vrsta b on
+//a.vrsta=b.sifra
+// where a.sifra=1
