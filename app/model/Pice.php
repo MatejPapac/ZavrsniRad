@@ -17,7 +17,7 @@ class Pice
       
       '); 
       echo $parametri;
-      $izraz->execute($parametri);
+      $izraz->execute([$parametri]);
       
   }
   //R-Read
