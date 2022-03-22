@@ -18,7 +18,9 @@ class Pice
       '); 
       echo $parametri;
       $izraz->execute([
-          'parametri'=>$parametri]);
+          'naziv'=>$parametri,
+          'cijena'=>$parametri,
+          'vrsta'=>$parametri]);
       
   }
   //R-Read
