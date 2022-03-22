@@ -49,7 +49,7 @@ class Pice
       $veza = DB::getInstanca();
       $izraz = $veza->prepare('
       
-          delete from smjer where sifra=:sifra;
+          delete from pice where sifra=:sifra;
       
       '); 
       $izraz->execute(['sifra'=>$sifra]);
