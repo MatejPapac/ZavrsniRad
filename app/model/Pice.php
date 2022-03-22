@@ -16,7 +16,7 @@ class Pice
           values (:naziv,:cijena,:vrsta);
       
       '); 
-      echo '$parametri';
+      echo $parametri;
       $izraz->execute($parametri);
       
   }
@@ -44,23 +44,19 @@ class Pice
   //D-Delete
 
  
-    public static function delete($sifra)
-    {
-        $veza = DB::getInstanca();
-        $izraz = $veza->prepare('
+  public static function delete($sifra)
+  {
+      $veza = DB::getInstanca();
+      $izraz = $veza->prepare('
+      
+          delete from smjer where sifra=:sifra;
+      
+      '); 
+      $izraz->execute(['sifra'=>$sifra]);
 
-                    
-            delete  
-            from pice a left join vrsta b on
-            a.vrsta=b.sifra
-            where a.sifra=:sifra
-
-        
-        '); 
-        $izraz->execute(['sifra'=>$sifra]);
-       
-    }
+  }
 }
+
 //delete  a.sifra,a.cijena,a.vrsta
 //from pice a inner join vrsta b on
 //a.vrsta=b.sifra
