@@ -16,7 +16,7 @@ class Pice
           values (:naziv,:cijena,:vrsta);
       
       '); 
-      echo $parametri;
+    
       $izraz->execute($parametri);
       
   }
