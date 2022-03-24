@@ -20,7 +20,7 @@ class PiceController extends AutorizacijaController
    {
        $this->view->render($this->viewDir. 'novi',[
            'poruka'=>'',
-           'pice'=>$this->pice
+           'pice'=>$this->pica
        ]);
    }
 
@@ -29,7 +29,7 @@ class PiceController extends AutorizacijaController
        $this->smjer =Pice::readOne($sifra);
        $this->view->render($this->viewDir. 'novi',[
         'poruka'=>'',
-        'pice'=>$this->pice
+        'pice'=>$this->pica
        ]);
 
    }
