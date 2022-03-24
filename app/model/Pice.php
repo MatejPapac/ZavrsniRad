@@ -3,19 +3,19 @@
 class Pice
 {
 
-    public static function readOne($sifra)
+    public static function readOne($kljuc)
     {
   
       $veza=DB::getInstanca();
       $izraz = $veza->prepare('
       
-      select * from pice where sifra=:sifra;
+      select * from pice where sifra=:parametar;
     
       
       
       ');
   
-     $izraz->execute(['sifra'=>$sifra]);
+     $izraz->execute(['parametar'=>$kljuc]);
      return $izraz->fetch();
     }
   //CRUD
@@ -56,6 +56,22 @@ class Pice
 
   //U-update
 
+  
+  public static function update($parametri)
+  {
+      $veza = DB::getInstanca();
+      $izraz = $veza->prepare('
+      
+          update pice set
+            naziv=:naziv,
+            cijena=:cijena,
+            vrsta=:vrsta,
+            where sifra =:sifra;
+ 
+      '); 
+    
+      $izraz->execute($parametri);
+  }
 
   //D-Delete
 
