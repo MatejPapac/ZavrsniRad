@@ -70,12 +70,12 @@ $pica = Pice::read();
         &&  $this->kontrolaVrsta()
         && $this->kontrolaCijena()){
             Pice::update((array)$this->pica);
-            //$this->index();
-            header('location:' . App::config('url').'smjer/pice');
+        
+            header('location:' . App::config('url').'pice/index');
         }else{
             $this->view->render($this->viewDir.'promjena',[
                 'poruka'=>$this->poruka,
-                'smjer'=>$this->smjer
+                'pica'=>$this->pica
             ]);
         }
     }
