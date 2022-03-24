@@ -62,7 +62,23 @@ $pica = Pice::read();
        }
      
 
-   
+       public function promjeni()
+    {
+        
+        
+        if($this->kontrolaNaziv()
+        &&  $this->kontrolaVrsta()
+        && $this->kontrolaCijena()){
+            Pice::update((array)$this->pica);
+            //$this->index();
+            header('location:' . App::config('url').'smjer/pice');
+        }else{
+            $this->view->render($this->viewDir.'promjena',[
+                'poruka'=>$this->poruka,
+                'smjer'=>$this->smjer
+            ]);
+        }
+    }
 
 
 
