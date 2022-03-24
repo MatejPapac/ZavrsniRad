@@ -2,6 +2,22 @@
 
 class Pice
 {
+
+    public static function readOne($sifra)
+    {
+  
+      $veza=DB::getInstanca();
+      $izraz = $veza->prepare('
+      
+      select * from pice where sifra=:sifra;
+    
+      
+      
+      ');
+  
+     $izraz->execute(['sifra'=>$sifra]);
+     return $izraz->fetch();
+    }
   //CRUD
 
 

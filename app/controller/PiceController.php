@@ -18,8 +18,23 @@ class PiceController extends AutorizacijaController
    public function novi()
 
    {
-       $this->view->render($this->viewDir. 'novi');
+       $this->view->render($this->viewDir. 'novi',[
+           'poruka'=>'',
+           'pice'=>$this->pice
+       ]);
    }
+
+   public function promjena($sifra)
+   {
+       $this->smjer =Pice::readOne($sifra);
+       $this->view->render($this->viewDir. 'novi',[
+        'poruka'=>'',
+        'pice'=>$this->pice
+       ]);
+
+   }
+
+
 
    public function dodajNovi()
    {
