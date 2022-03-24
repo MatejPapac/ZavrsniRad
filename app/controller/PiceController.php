@@ -6,6 +6,8 @@ class PiceController extends AutorizacijaController
     'privatno' . DIRECTORY_SEPARATOR .
      'pice' .DIRECTORY_SEPARATOR;
 
+     private $poruka;
+
 
      public function index ()
      {
@@ -43,5 +45,27 @@ class PiceController extends AutorizacijaController
     {
         Pice::delete($sifra);
         $this->index();
+    }
+    public function kontrolaVrsta()
+    {
+        if(strlen($this->pice->vrsta)===0){
+            $this->poruka='vrsta obavezno' ;
+        }
+    }
+
+    public function kontrolaNaziv()
+    {
+        if(strlen($this->pice->naziv)===0){
+            $this->poruka='Naziv obavezno';
+            return false;
+
+        }
+        if(strlen($this->pice->naziv)>50){
+            $this->poruka='naziv obavezno mora biti manji od 50';
+            return false;
+        }
+        return true;
+
+        
     }
 }
