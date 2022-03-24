@@ -97,10 +97,7 @@ $pica = Pice::read();
             $this->poruka='vrsta obavezno' ;
             return false;
         }
-        if(strlen($this->pice->vrsta)=false){
-        $this->poruka='vrsta ne postoji';
-        return false;
-    }
+        
 return true;
 }
 
