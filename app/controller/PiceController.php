@@ -88,7 +88,7 @@ class PiceController extends AutorizacijaController
    public function dodajNovi()
    {
     
-
+  $this->smjer=(object)$_POST;
   if ($this->kontrolaNaziv()){
       Pice::create($_POST);
       $this->index();
