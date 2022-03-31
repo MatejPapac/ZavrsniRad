@@ -117,8 +117,9 @@ class PiceController extends AutorizacijaController
         }
         $broj = (int) trim($this->pica->vrsta);
         if($broj<=0){
-            $this->poruka='Trajanje mora biti cijeli broj veći od 0, unijeli ste: ' 
+            $this->poruka='Vrsta mora biti cijeli broj veći od 0, unijeli ste: ' 
             . $this->pica->vrsta;
+            return false;
         }
         
 return true;
