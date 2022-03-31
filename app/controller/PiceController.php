@@ -143,7 +143,7 @@ return true;
 
     public function kontrolaNaziv()
     {
-        if(strlen($this->pice->naziv)===0){
+        if(($this->pice->naziv)===0){
             $this->poruka='Naziv obavezno';
             return false;
 
