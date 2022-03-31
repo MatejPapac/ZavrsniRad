@@ -89,7 +89,8 @@ class PiceController extends AutorizacijaController
    {
     
   $this->pica=(object)$_POST;
-  if ($this->kontrolaNaziv()){
+  if ($this->kontrolaNaziv()
+  && $this->kontrolaVrsta()){
       Pice::create($_POST);
       $this->index();
   }else{
@@ -110,7 +111,7 @@ class PiceController extends AutorizacijaController
     }
     public function kontrolaVrsta()
     {
-        if(strlen($this->pice->vrsta)===0){
+        if(strlen(trim($this->pica->vrsta))===0){
             $this->poruka='vrsta obavezno' ;
             return false;
         }
