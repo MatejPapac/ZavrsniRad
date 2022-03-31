@@ -95,7 +95,7 @@ class PiceController extends AutorizacijaController
   }else{
       $this->view->render($this->viewDir . 'novi' ,[
           'poruka'=>$this->poruka,
-          'pica'=>$this->smjer
+          'pica'=>$this->pica
       ]);
   }
   
