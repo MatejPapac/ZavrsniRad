@@ -78,7 +78,7 @@ class PiceController extends AutorizacijaController
         }else{
             $this->view->render($this->viewDir.'promjena',[
                 'poruka'=>$this->poruka,
-                'pica'=>$this->pica
+                'pica'=>$this->pice
             ]);
         }
     }
