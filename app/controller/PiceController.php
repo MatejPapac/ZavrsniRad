@@ -121,7 +121,12 @@ class PiceController extends AutorizacijaController
             . $this->pica->vrsta;
             return false;
         }
-        
+        if(fmod($broj,1) !==0.00){
+            $this->poruka='vrsta mora biti cijeli broj unijeli ste decimalni broj:' 
+             . $this->pica->vrsta;
+             return false;
+        }
+
 return true;
 }
 
