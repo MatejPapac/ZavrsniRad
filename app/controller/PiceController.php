@@ -85,18 +85,14 @@ class PiceController extends AutorizacijaController
    public function dodajNovi()
    {
 
-    if($this->kontrolaNaziv()
-    && $this->kontrolaCijena()
-    && $this->kontrolaVrsta()) {
-        Pice::create((array)$this->pica);
-        header('location:' . App::config('url') .'pice/index');
-    }else{
-        $this->view->render($this->viewDir.'novi',[
-            'poruka'=>$this->poruka,
-            'pica'=>$this->smjer
-        ]);
-    
-    }
+  if ($this->kontrolaNaziv()){
+      Pice::create($_POST);
+      $this->index();
+  }else{
+      $this->view->render($this->viewDir . 'novi' ,[
+          'poruka'=>$this->poruka
+      ]);
+  }
   
 
    }
@@ -143,18 +139,19 @@ return true;
 
     public function kontrolaNaziv()
     {
-        if(strlen($this->pica->naziv)===0){
-            $this->poruka='Naziv obavezno';
-            return false;
-
-        }
-        if(strlen($this->pice->naziv)>50){
-            $this->poruka='naziv obavezno mora biti manji od 50';
+        if(strlen($_POST['naziv'])===0){
+            $this->poruka="Naziv obavezno";
             return false;
         }
         return true;
 
+
+    }
+
+        
+      
+
+
   
         
     }
-}
