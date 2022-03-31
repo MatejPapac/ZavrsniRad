@@ -39,7 +39,10 @@ class PiceController extends AutorizacijaController
    public function novi()
 
    {
-       $this->view->render($this->viewDir. 'novi');
+       $this->view->render($this->viewDir. 'novi',[
+           'poruka'=>'Popunite podatke',
+           'pica'=>$this->pica
+       ]);
          
       
    }
@@ -141,6 +144,10 @@ return true;
     {
         if(strlen($_POST['naziv'])===0){
             $this->poruka="Naziv obavezno";
+            return false;
+        }
+        if(strlen($_POST['naziv'])>50){
+            $this->poruka='Naziv ne smije biti duzi od 50 znakova';
             return false;
         }
         return true;
