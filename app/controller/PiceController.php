@@ -78,7 +78,7 @@ class PiceController extends AutorizacijaController
         }else{
             $this->view->render($this->viewDir.'promjena',[
                 'poruka'=>$this->poruka,
-                'pica'=>$this->pice
+                'pica'=>$this->pica
             ]);
         }
     }
@@ -88,7 +88,7 @@ class PiceController extends AutorizacijaController
    public function dodajNovi()
    {
     
-  $this->smjer=(object)$_POST;
+  $this->pica=(object)$_POST;
   if ($this->kontrolaNaziv()){
       Pice::create($_POST);
       $this->index();
