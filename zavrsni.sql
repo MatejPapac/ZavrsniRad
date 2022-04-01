@@ -80,11 +80,19 @@ insert into vrsta(sifra,naziv)values
 (null,'Sok'),
 (null,'Zesta'),
 (null,'Gazirana pica');
+(null,'piletina'),
+(null,'desert'),
+(null,'Riba');
 
 insert into pice(sifra,naziv,cijena,vrsta)
 values(null,'Cedevita',9.00,1),
        (null,'Pelinkovac 0,03',8.00,2),
        (null,'Coca-Cola',14.00,3);
+
+       insert into jelo(sifra,naziv,cijena,vrsta)
+      values(null,'Cedevita',9.00,4),
+       (null,'Pelinkovac 0,03',8.00,5),
+       (null,'Coca-Cola',14.00,6);
 
 
 insert into rezervacija(sifra,datumiVrijeme,osoba,brojRezerviranihMjesta,mjesto,kontakt,napomena)
