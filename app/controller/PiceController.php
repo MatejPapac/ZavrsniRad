@@ -59,21 +59,28 @@ class PiceController extends AutorizacijaController
      
 
        public function promjeni()
-    {
-        
-        
-        if($this->kontrolaNaziv()
-        &&  $this->kontrolaVrsta()
+       {
+    
+        $this->primpremiPodatke();
+        if ($this->kontrolaNaziv()
+        && $this->kontrolaVrsta()
         && $this->kontrolaCijena()){
-            Pice::update((array)$this->pica);
-        
-            header('location:' . App::config('url').'pice/index');
+            Pice::update($_POST);
+            $this->index();
         }else{
-            $this->view->render($this->viewDir.'promjena',[
+            $this->view->render($this->viewDir . 'promjena' ,[
                 'poruka'=>$this->poruka,
                 'pica'=>$this->pica
             ]);
         }
+        
+      
+         }
+
+    private function primpremiPodatke()
+    {
+        $this->pica=(object)$_POST;
+
     }
 
 
