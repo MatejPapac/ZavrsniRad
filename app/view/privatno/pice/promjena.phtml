@@ -1,22 +1,20 @@
 <form action="<?=App::config('url') ?>pice/promjeni" method="post">
 <fieldset>
  <legend>
-     Promjena Pića
+   promijeni pića
  </legend>
-</fieldset>
+
 <label>
     <h3>Naziv</h3>
 <label for="naziv"></label>
-<input type="text" name="naziv" id="sifra">
+<input type="text" name="naziv" id="sifra" value="<?=$pica->naziv?>" />
 </label>
 <h3>Cijena</h3>
 <label for="Cijena"></label>
-<input type="number" name="cijena" id="sifra">
+<input type="number" name="cijena" id="sifra" value="<?=$pica->cijena?>">
 <h3>Vrsta</h3>
 <label for="vrsta"></label>
-<input type="text" name="vrsta" id="sifra">
-
-<input type="hidden" name="sifra" value="<?=$pice->sifra?>">
+<input type="text" name="vrsta" id="sifra" value="<?=$pica->vrsta?>">
 
 <div class="grid-x grid-padding-x">
     <div class="large-4 cell">
@@ -24,8 +22,11 @@
     href="<?=App::config('url')?>pice/index">Odustani </a>   
     </div>
     <div class="large-8cell"></div>
-    <input type="submit" class="success button expanded" value="Promjeni ">
+    <input type="submit" class="success button expanded" value="promjeni ">
 </div>
 
+
+<?=$poruka?>
+</fieldset>
 
 </form>

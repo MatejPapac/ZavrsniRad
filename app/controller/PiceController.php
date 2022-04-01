@@ -50,19 +50,12 @@ class PiceController extends AutorizacijaController
    public function promjena($id)
    {
        $this->pica =Pice::readOne($id);
-
-
-       if($this->pica->cijena==0){
-           $this->pica->cijena='';
-       }else{
-           $this->pica->cijena=$this->nf->format($this->pica->cijena);
-       }
-
        $this->view->render($this->viewDir . 'promjena',[
-           'poruka'=>'promjenite podatke',
-           'pica'=>$this->pica
+        'poruka'=>'Promijenite podatke',
+        'smjer'=> $this->pica
        ]);
-       }
+
+   }
      
 
        public function promjeni()
