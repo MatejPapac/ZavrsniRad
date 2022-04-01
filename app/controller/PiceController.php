@@ -128,7 +128,7 @@ return true;
 
     private function kontrolaCijena()
     {
-        if(strlen(trim($this->smjer->cijena))>0){
+        if(strlen(trim($this->pice->cijena))>0){
 
           
            
