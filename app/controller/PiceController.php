@@ -90,7 +90,8 @@ class PiceController extends AutorizacijaController
     
   $this->pica=(object)$_POST;
   if ($this->kontrolaNaziv()
-  && $this->kontrolaVrsta()){
+  && $this->kontrolaVrsta()
+  && $this->kontrolaCijena()){
       Pice::create($_POST);
       $this->index();
   }else{
