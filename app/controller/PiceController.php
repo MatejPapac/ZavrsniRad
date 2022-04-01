@@ -52,7 +52,7 @@ class PiceController extends AutorizacijaController
        $this->pica =Pice::readOne($id);
        $this->view->render($this->viewDir . 'promjena',[
         'poruka'=>'Promijenite podatke',
-        'smjer'=> $this->pica
+        'pica'=> $this->pica
        ]);
 
    }
