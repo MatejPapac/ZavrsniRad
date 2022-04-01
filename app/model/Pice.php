@@ -65,7 +65,7 @@ class Pice
           update pice set
             naziv=:naziv,
             cijena=:cijena,
-            vrsta=:vrsta,
+            vrsta=:vrsta
             where sifra =:sifra;
  
       '); 
