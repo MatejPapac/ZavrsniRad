@@ -142,9 +142,10 @@ return true;
             $this->pica->cijena='';
             return false;
             }
+            return true;
         }
 
-        return true;
+     
     }
 
 
