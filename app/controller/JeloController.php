@@ -13,4 +13,11 @@ class JeloController extends AutorizacijaController
              'jelo'=>Jelo::read()
          ]);
      }
+
+     public function brisanje($sifra)
+     {
+         Jelo::delete($sifra);
+       
+         header('location' . App::config('url') . 'jelo/index');
+     }
 }
