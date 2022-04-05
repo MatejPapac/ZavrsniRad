@@ -45,7 +45,7 @@ class Jelo
     $veza=DB::getInstanca();
     $izraz = $veza->prepare('
     
-    select * from pice
+    select * from jelo
   
     
     
@@ -63,7 +63,7 @@ class Jelo
       $veza = DB::getInstanca();
       $izraz = $veza->prepare('
       
-          update pice set
+          update jelo set
             naziv=:naziv,
             cijena=:cijena,
             vrsta=:vrsta
@@ -82,15 +82,10 @@ class Jelo
       $veza = DB::getInstanca();
       $izraz = $veza->prepare('
       
-          delete from pice where sifra=:sifra;
+          delete from jelo where sifra=:sifra;
       
       '); 
       $izraz->execute(['sifra'=>$sifra]);
 
   }
 }
-
-//delete  a.sifra,a.cijena,a.vrsta
-//from pice a inner join vrsta b on
-//a.vrsta=b.sifra
-// where a.sifra=1
