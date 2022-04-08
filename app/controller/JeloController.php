@@ -18,6 +18,6 @@ class JeloController extends AutorizacijaController
      {
          Jelo::delete($sifra);
        
-         header('location' . App::config('url') . 'jelo/index');
+         header('location :'. App::config('url') . 'jelo/index');
      }
 }
