@@ -27,8 +27,8 @@ class PiceController extends AutorizacijaController
      public function index ()
      {
      $pica = Pice::read();
-        foreach($pica as $p){
-            $p->cijena=$this->nf->format($p->cijena);
+        foreach($pica as $pice){
+            $pice->cijena=$this->nf->format($pice->cijena);
         }
        
          $this->view->render($this->viewDir . 'index',[
