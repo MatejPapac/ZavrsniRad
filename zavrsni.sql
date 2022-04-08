@@ -77,12 +77,18 @@ insert into operater(email,lozinka,ime,prezime, uloga) values
 
 
 insert into vrsta(sifra,naziv)values
-(null,'Sok'),
+(null,'Sokovi'),
 (null,'Zesta'),
-(null,'Gazirana pica');
+(null,'Gazirana pića');
 (null,'piletina'),
 (null,'desert'),
-(null,'Riba');
+(null,'Riba'),
+(null,'Steak'),
+(null,'Pizze'),
+(null,'Gotova jela');
+
+
+
 
 insert into pice(sifra,naziv,cijena,vrsta)
 values(null,'Cedevita',9.00,1),
