@@ -2,7 +2,56 @@
     
 <div class="grid-x">
     <div class ="cell-large-6">
-        <h1 style="font-size:1.5rem;">Pića <i 
+        <h1 style="font-size:1.5rem;">Gazirana Pića <i 
+        style="color:yellow" 
+        class="fas fa-1x fa-beer">
+    </i> </h1>
+    </div>
+</div class ="cell-large-6" style="tet-align:right;">
+<a href="<?=App::config('url') ?>pice/novi"><i 
+ style="color: green;"
+ title="Dodaj novi" 
+ class="fas fa-2x fa-plus"></i></a>
+
+
+<table>
+    <thead>
+        <tr>
+            <th>Naziv</th>
+            <th>Cijena</th>
+            <th>Vrsta</th>
+            <th>Akcija</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach($pice as $pica): ?>
+            <tr>
+                <td><?=$pica->naziv?></td>
+                <td><?=$pica->cijena?> </td>
+                <td><?=$pica->vrsta?></td>
+                <td>
+<a href="<?=App::config('url') ?>pice/promjena/<?=$pica->sifra?>">
+<i style="color: black;"
+ title="promjeni" 
+ class="fas fa-2x fa-pen"></i>
+</a>
+
+<a href="<?=App::config('url') ?>pice/brisanje/<?=$pica->sifra?>">
+<i style="margin-left:20px;"
+ title="izbrisi" 
+ class="fas fa-2x fa-trash"></i>
+</a>
+</td>
+
+            </tr>
+        <?php endforeach; ?>
+    </tbody>
+</table>
+
+    
+<div class="grid-x">
+    <div class ="cell-large-6">
+        <h1 style="font-size:1.5rem;">Žestoka Pića <i 
         style="color:yellow" 
         class="fas fa-1x fa-beer">
     </i> </h1>
