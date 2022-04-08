@@ -10,7 +10,7 @@ class JeloController extends AutorizacijaController
      public function index ()
      {
          $this->view->render($this->viewDir . 'index',[
-             'jelo'=>Jelo::read()
+             'jela'=>Jelo::read()
          ]);
      }
 
@@ -18,6 +18,6 @@ class JeloController extends AutorizacijaController
      {
          Jelo::delete($sifra);
        
-         header('location :'. App::config('url') . 'jelo/index');
+         header('location:'. App::config('url') . 'jelo/index');
      }
 }
