@@ -108,7 +108,12 @@ class PiceController extends AutorizacijaController
     {
         Pice::delete($sifra);
       
-        header('location :' . App::config('url') . 'pice/index');
+        header('location:' . App::config('url') . 'pice/index');
+
+
+
+        
+       
     }
     public function kontrolaVrsta()
     {
