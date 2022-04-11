@@ -23,12 +23,13 @@
             <th> mjesto</th>
             <th> kontakt</th>
             <th> napomena</th>
+            <th> akcija</th>
         </tr>
     </thead>
     <tbody>
         <?php foreach($rezervacija as $z): ?>
             <tr>
-                <td><?=$z->datum?></td>
+                <td><?=$z->Datum?></td>
                 <td><?=$z->osoba?> </td>
                 <td><?=$z->brojRezerviranihMjesta?></td>
                 <td><?=$z->mjesto?></td>
