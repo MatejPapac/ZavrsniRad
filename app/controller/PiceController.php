@@ -61,7 +61,7 @@ class PiceController extends AutorizacijaController
        public function promjeni()
        {
     
-        $this->primpremiPodatke();
+        $this->pripremiPodatke();
         if ($this->kontrolaNaziv()
         && $this->kontrolaVrsta()
         && $this->kontrolaCijena()){
@@ -77,7 +77,7 @@ class PiceController extends AutorizacijaController
       
          }
 
-    private function primpremiPodatke()
+    private function pripremiPodatke()
     {
         $this->pica=(object)$_POST;
 

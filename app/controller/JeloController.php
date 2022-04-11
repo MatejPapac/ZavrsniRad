@@ -31,7 +31,7 @@ class JeloController extends AutorizacijaController
      public function index ()
      {
          $this->view->render($this->viewDir . 'index',[
-             'jela'=>Jelo::read(),
+             'jelo'=>Jelo::read(),
              'css'=>'<link rel="stylesheet" href="'.App::config('url').'public/css/piceindex.css">'
             
          ]);
@@ -41,7 +41,7 @@ class JeloController extends AutorizacijaController
      {
          $this->view->render($this->viewDir . 'novi',[
              'poruka'=>'',
-             'jela'=>$this->jela
+             'jelo'=>$this->jela
          ]);
      }
 
@@ -50,14 +50,112 @@ class JeloController extends AutorizacijaController
          $this->jela=Jelo::readOne($id);
          $this->view->render($this->viewDir . 'promjena',[
              'poruka'=>'',
-             'jela'=>$this->jela
+             'jelo'=>$this->jela
          ]);
      }
 
      public function promjeni()
      {
-         
+         $this->pripremiPodatke();
+         if ($this->kontrolaNaziv()
+        && $this->kontrolaVrsta()
+        && $this->kontrolaCijena()){
+            Jelo::update($_POST);
+            $this->index();
+        }else{
+            $this->view->render($this->viewDir . 'promjena' ,[
+                'poruka'=>$this->poruka,
+                'jelo'=>$this->jela
+            ]);
+        }
      }
+
+     private function pripremiPodatke()
+     {
+         $this->jela=(object)$_POST;
+ 
+     }
+
+     public function dodajNovi()
+     {
+      
+    $this->jela=(object)$_POST;
+    if ($this->kontrolaNaziv()
+    && $this->kontrolaVrsta()
+    && $this->kontrolaCijena()){
+        Jelo::create($_POST);
+        $this->index();
+    }else{
+        $this->view->render($this->viewDir . 'novi' ,[
+            'poruka'=>$this->poruka,
+            'jelo'=>$this->jela
+        ]);
+    }
+    
+  
+     }
+
+     public function kontrolaNaziv()
+    {
+        if(strlen($this->jela->naziv)===0){
+            $this->poruka="Naziv obavezno";
+            return false;
+        }
+        if(strlen($this->jela->naziv)>50){
+            $this->poruka='Naziv ne smije biti duzi od 50 znakova';
+            return false;
+        }
+        return true;
+
+
+    }
+
+    private function kontrolaCijena()
+    {
+        if(strlen(trim($this->jela->cijena))>0){
+
+          
+           
+            $this->jela->cijena = str_replace('.','',$this->jela->cijena);
+          
+            $this->jela->cijena = (float)str_replace(',','.',$this->jela->cijena);
+        
+            if($this->jela->cijena<=0){
+                $this->poruka='Ako unosite cijenu, mora biti decimalni broj veći od 0, unijeli ste: ' 
+            . $this->jela->cijena;
+            $this->jela->cijena='';
+            return false;
+            }
+            return true;
+        }
+
+     
+    }
+
+    public function kontrolaVrsta()
+    {
+        if(strlen(trim($this->jela->vrsta))===0){
+            $this->poruka='vrsta obavezno' ;
+            return false;
+        }
+        $broj = (int) trim($this->jela->vrsta);
+        if($broj<=0){
+            $this->poruka='Vrsta mora biti cijeli broj veći od 0, unijeli ste: ' 
+            . $this->jela->vrsta;
+            return false;
+        }
+        if(fmod($broj,1) !==0.00){
+            $this->poruka='vrsta mora biti cijeli broj unijeli ste decimalni broj:' 
+             . $this->jela->vrsta;
+             return false;
+        }
+
+return true;
+}
+
+  
+
+    
 
      public function brisanje($sifra)
      {
