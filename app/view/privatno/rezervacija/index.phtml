@@ -1,0 +1,56 @@
+
+    
+<div class="grid-x">
+    <div class ="cell-large-6">
+        <h1 style="font-size:1.5rem;"> Pića <i 
+        style="color:yellow" 
+        class="fas fa-1x fa-beer">
+    </i> </h1>
+    </div>
+</div class ="cell-large-6" style="tet-align:right;">
+<a href="<?=App::config('url') ?>rezervacija/novi"><i 
+ style="color: green;"
+ title="Dodaj novi" 
+ class="fas fa-2x fa-bell"></i></a>
+
+
+<table>
+    <thead>
+        <tr>
+            <th>Datum</th>
+            <th>osoba</th>
+            <th> brojRezerviranihMjesta</th>
+            <th> mjesto</th>
+            <th> kontakt</th>
+            <th> napomena</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach($reze as $z): ?>
+            <tr>
+                <td><?=$z->naziv?></td>
+                <td><?=$z->cijena?> </td>
+                <td><?=$z->vrsta?></td>
+                <td>
+<a href="<?=App::config('url') ?>pice/promjena/<?=$z->sifra?>">
+<i style="color: black;"
+ title="promjeni" 
+ class="fas fa-2x fa-pen"></i>
+</a>
+
+<a href="<?=App::config('url') ?>pice/brisanje/<?=$z->sifra?>">
+<i style="margin-left:20px;"
+ title="izbrisi" 
+ class="fas fa-2x fa-trash"></i>
+</a>
+</td>
+
+            </tr>
+        <?php endforeach; ?>
+    </tbody>
+</table>
+
+    
+
+
+
