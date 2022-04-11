@@ -2,16 +2,16 @@
     
 <div class="grid-x">
     <div class ="cell-large-6">
-        <h1 style="font-size:1.5rem;"> Pića <i 
+        <h1 style="font-size:1.5rem;"> rezervacija <i 
         style="color:yellow" 
-        class="fas fa-1x fa-beer">
+        class="fas fa-1x fa-bell">
     </i> </h1>
     </div>
 </div class ="cell-large-6" style="tet-align:right;">
 <a href="<?=App::config('url') ?>rezervacija/novi"><i 
  style="color: green;"
  title="Dodaj novi" 
- class="fas fa-2x fa-bell"></i></a>
+ class="fas fa-2x fa-plus"></i></a>
 
 
 <table>
@@ -26,7 +26,7 @@
         </tr>
     </thead>
     <tbody>
-        <?php foreach($reze as $z): ?>
+        <?php foreach($rezervacija as $z): ?>
             <tr>
                 <td><?=$z->naziv?></td>
                 <td><?=$z->cijena?> </td>
