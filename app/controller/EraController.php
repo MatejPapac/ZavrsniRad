@@ -1,10 +1,7 @@
 <?php
 
-class EraController extends AutorizacijaController
+class EraController extends Controller
 {
-
-    private $viewDir = 'privatno' . DIRECTORY_SEPARATOR . 
-    'era' .DIRECTORY_SEPARATOR;
     public function index()
     {
         $this->view->render('era');
