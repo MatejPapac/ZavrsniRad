@@ -1,6 +1,6 @@
 <?php
 
-class EraController extends Controller
+class EraController extends AutorizacijaController
 {
     public function index()
     {
