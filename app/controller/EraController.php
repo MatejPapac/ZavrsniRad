@@ -7,6 +7,6 @@ class EraController extends AutorizacijaController
     'era' .DIRECTORY_SEPARATOR;
     public function index()
     {
-        $this->view->render('index');
+        $this->view->render('era');
     }
 } 
