@@ -29,7 +29,7 @@ class PiceController extends AutorizacijaController
 
      public function index ()
      {
-     $pica = Rezervacija::read();
+    
       
        
          $this->view->render($this->viewDir . 'index',[
