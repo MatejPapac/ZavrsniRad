@@ -1,0 +1,54 @@
+
+    
+<div class="grid-x">
+    <div class ="cell-large-6">
+        <h1 style="font-size:1.5rem;"> mjesto <i 
+        style="color:yellow" 
+        class="fas fa-1x fa-chair">
+    </i> </h1>
+    </div>
+</div class ="cell-large-6" style="tet-align:right;">
+<a href="<?=App::config('url') ?>mjesto/novi"><i 
+ style="color: green;"
+ title="Dodaj novi" 
+ class="fas fa-2x fa-plus"></i></a>
+
+
+<table>
+    <thead>
+        <tr>
+            <th>Naziv</th>
+            <th>brojStolica</th>
+      
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach($mjesto as $m): ?>
+            <tr>
+                <td><?=$m->naziv?></td>
+                <td><?=$m->brojStolica?> </td>
+        
+                
+        </tr>
+<a href="<?=App::config('url') ?>mjesto/promjena/<?=$m->sifra?>">
+<i style="color: black;"
+ title="promjeni" 
+ class="fas fa- fa-pen"></i>
+</a>
+
+<a href="<?=App::config('url') ?>mjesto/brisanje/<?=$m->sifra?>">
+<i style="margin-left:20px;"
+ title="izbrisi" 
+ class="fas fa- fa-trash"></i>
+</a>
+</td>
+
+            </tr>
+        <?php endforeach; ?>
+    </tbody>
+</table>
+
+    
+
+
+
