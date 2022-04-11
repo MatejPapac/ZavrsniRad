@@ -2,13 +2,12 @@
    
     margin: 0.4rem;
     max-width: 100%;
-    color: bisque;
+
 }
 
 #program{
     min-height: 400px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-style: oblique;
+  
 }
 
 hr{
@@ -24,6 +23,3 @@ hr{
     margin: auto;
   }
   
-.background {
-    color:black;
-}
