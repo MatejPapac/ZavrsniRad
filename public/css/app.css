@@ -1,19 +1,15 @@
 .grid-container{
-   
     margin: 0.4rem;
     max-width: 100%;
-
 }
 
 #program{
-    min-height: 400px;
-  
+    min-height: 700px;
 }
 
 hr{
     max-width: 100%;
 }
-
 
 .log-in-form {
     border: 1px solid #cacaca;
@@ -23,3 +19,71 @@ hr{
     margin: auto;
   }
   
+  #tabletemp {
+    text-align: center;
+  }
+
+  table#tabletemp th{
+    text-align: center;
+  }
+
+  table tr:nth-of-type(odd) {
+    background: #d9d7db;
+    }
+
+  .top-bar, .top-bar ul {
+    background-color: black;
+    color: white;
+  }
+  body{
+    background: #d9d7db;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .callout {
+    background: #d9d7db;
+  }
+
+  footer{
+    min-height: 40px;
+    margin-top: auto;
+    background-color: black;
+    color: white;
+  }
+
+  #input_form{
+    box-sizing: border-box;
+    display: list-item;
+    float: none;
+    line-height: 25,6px;
+    position: static;
+    z-index: auto;
+  }
+
+  
+.table-expand {
+  margin-top: 1rem;
+}
+
+.table-expand td {
+  color: #8a8a8a;
+}
+
+.table-expand tr {
+  border: 1px solid #e6e6e6;
+}
+
+.table-expand-row.is-active .expand-icon::after {
+  content: '-';
+}
+
+.table-expand-row .expand-icon::after {
+  content: '+';
+  float: right;
+}
+
+.table-expand-row-content {
+  display: none;
+}
