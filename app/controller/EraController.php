@@ -1,6 +1,6 @@
 <?php
 
-class EraController extends Controller
+class EraController extends AutorizacijaController
 {
 
     private $viewDir = 'privatno' . DIRECTORY_SEPARATOR;
