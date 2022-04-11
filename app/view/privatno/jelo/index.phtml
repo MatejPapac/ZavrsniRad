@@ -24,11 +24,11 @@
         </tr>
     </thead>
     <tbody>
-        <?php foreach($jela as $jelo): ?>
+        <?php foreach($jelo as $jela): ?>
             <tr>
-                <td><?=$jelo->naziv?></td>
-                <td><?=$jelo->cijena?> </td>
-                <td><?=$jelo->vrsta?></td>
+                <td><?=$jela->naziv?></td>
+                <td><?=$jela->cijena?> </td>
+                <td><?=$jela->vrsta?></td>
                 <td>
 <a href="<?=App::config('url') ?>jelo/promjena/<?=$pica->sifra?>">
 <i style="color: black;"
