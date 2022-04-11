@@ -1,15 +1,14 @@
 <?php
 
-class PiceController extends AutorizacijaController
+class RezervacijaController extends AutorizacijaController
 {
     private $viewDir=
     'privatno' . DIRECTORY_SEPARATOR .
      'rezervacija' .DIRECTORY_SEPARATOR;
 
-     private $poruka;
+
      
-     private $rez;
- 
+
 
 
      public function index ()
