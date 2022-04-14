@@ -1,9 +1,9 @@
 <form action="<?=App::config('url') ?>pice/dodajNovi" method="post">
 <fieldset>
- <legend>
-     Dodavanje novih Pića
- </legend>
+<div style="display:flex; justify-content:center ">
+    <div style="width:600px; ">
 
+<p class="h1">Dodaj piće</p>
 <label>
     <h3>Naziv</h3>
 <label for="naziv"></label>
@@ -15,14 +15,12 @@
 <h3>Vrsta</h3>
 <label for="vrsta"></label>
 <input type="text" name="vrsta" id="sifra" value="<?=$pica->vrsta?>">
+<div style="display:flex; flex-direction:column;">
+    <button type="submit"  class="btn btn-primary btn-block">Dodaj</button>
+    <button  onclick="location.href = '<?=App::config('url')?>pice/index';" type="button" class="btn btn-danger btn-block">Odustani</button>
+</div>
 
-<div class="grid-x grid-padding-x">
-    <div class="large-4 cell">
-    <a class="alert button expanded"
-    href="<?=App::config('url')?>pice/index">Odustani </a>   
-    </div>
-    <div class="large-8cell"></div>
-    <input type="submit" class="success button expanded" value="Dodaj ">
+</div>
 </div>
 
 
