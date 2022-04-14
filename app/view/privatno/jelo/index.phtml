@@ -1,6 +1,24 @@
 
-    
-<div class="grid-x">
+  
+  
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+ 
+
+    <div class="grid-x">
     <div class ="cell-large-6">
         <h1 style="font-size:1.5rem;"> Jela <i 
         style="color:yellow" 
@@ -9,21 +27,20 @@
     </div>
 </div class ="cell-large-6" style="tet-align:right;">
 <a href="<?=App::config('url') ?>jelo/novi"><i 
- style="color: green;"
+ style="color: blue;"
  title="Dodaj novi" 
  class="fas fa-2x fa-plus"></i></a>
 
-
-<table>
-    <thead>
-        <tr>
+ <table class="table">
+  <thead class="thead-dark">
+  <tr>
             <th>Naziv</th>
             <th>Cijena</th>
             <th>Vrsta</th>
             <th>Akcija</th>
-        </tr>
-    </thead>
-    <tbody>
+       </tr>
+  </thead>
+  <tbody>
         <?php foreach($jelo as $jela): ?>
             <tr>
                 <td><?=$jela->naziv?></td>
@@ -31,13 +48,13 @@
                 <td><?=$jela->vrsta?></td>
                 <td>
 <a href="<?=App::config('url') ?>jelo/promjena/<?=$jela->sifra?>">
-<i style="color: black;"
+<i style="color: black; "
  title="promjeni" 
  class="fas fa-2x fa-pen"></i>
 </a>
 
 <a href="<?=App::config('url') ?>jelo/brisanje/<?=$jela->sifra?>">
-<i style="margin-left:20px;"
+<i style="margin-left:20px;  "
  title="izbrisi" 
  class="fas fa-2x fa-trash"></i>
 </a>
@@ -48,7 +65,7 @@
     </tbody>
 </table>
 
-    
 
 
-
+  </body>
+</html>
