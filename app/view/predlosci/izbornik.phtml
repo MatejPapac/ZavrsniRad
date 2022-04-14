@@ -1,4 +1,4 @@
-<div class="title-bar" data-responsive-toggle="example-menu" data-hide-for="medium">
+<!-- <div class="title-bar" data-responsive-toggle="example-menu" data-hide-for="medium">
   <button class="menu-icon" type="button" data-toggle></button>
   <div class="title-bar-title"><?=App::config('naslovApp')?></div>
 </div>
@@ -37,4 +37,52 @@
       </li>
     </ul>
   </div>
-</div>
+</div> -->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#"><?=App::config('naslovApp')?></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse justify-content-between"  id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="<?=App::config('url')?>">Početna</a>
+      </li>
+      <?php if(App::autoriziran()):?>
+      <li class="nav-item">
+       <a  class="nav-link" href="<?=App::config('url')?>nadzornaploca/index">Nadzorna ploča</a>
+      </li>
+      <li class="nav-item">
+       <a  class="nav-link" href="<?=App::config('url')?>era/index">ERA</a>
+      </li>
+      <?php endif;?>
+      <li class="nav-item">
+      <a class="nav-link" href="<?=App::config('url')?>pice/index">Piće</a>
+      </li>
+      <li class="nav-item">
+      <a class="nav-link" href="<?=App::config('url')?>jelo/index">Jelo</a>
+      </li>
+      <li class="nav-item">
+      <a class="nav-link" href="<?=App::config('url')?>mjesto/index">Mjesto</a>
+      </li>
+      <li class="nav-item">
+      <a class="nav-link" href="<?=App::config('url')?>rezervacija/index">Rezervacija</a>
+      </li>
+     
+     
+    
+    </ul>
+    <div class="navbar-nav">  
+        <?php if(App::autoriziran()):?>  
+          <li class="nav-item">
+          <a class="nav-link" href="<?=App::config('url')?>login/odjava">Odjavi <?php echo $_SESSION['autoriziran']->ime ?></a>
+        <?php else:?>
+          <a class="nav-link" href="<?=App::config('url')?>login/index">Login</a>
+        <?php endif;?>
+          </li>
+      </div>
+   
+    
+  </div>
+</nav>

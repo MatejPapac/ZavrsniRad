@@ -1,7 +1,17 @@
+* {
+  margin: 0;
+  padding: 0; 
+  background-color: #f4e1d2;
+}
+body{
+  margin: 0;
+  padding: 0; 
+  background-color: #f4e1d2;
+}
 .grid-container {
-  margin: 0.4rem;
+  background-color: #f4e1d2;
   max-width: 100%;
- 
+  border:2px solid red;
 }
 
 #program {
