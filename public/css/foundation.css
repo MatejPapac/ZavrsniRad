@@ -5046,8 +5046,6 @@ select:not([multiple]) {
   padding: 1rem;
   border: 1px solid rgba(10, 10, 10, 0.25);
   border-radius: 0;
-  background-color: red;
-  color: red;
 }
 .callout > :first-child {
   margin-top: 0;
@@ -8552,8 +8550,3 @@ a.thumbnail image {
   transition-timing-function: ease-in-out !important;
 }
 
-.bounce-in {
-  -webkit-transition-timing-function: cubic-bezier(
-    0.485,
-    0.155,
-    0.24,
