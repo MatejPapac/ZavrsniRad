@@ -5046,8 +5046,8 @@ select:not([multiple]) {
   padding: 1rem;
   border: 1px solid rgba(10, 10, 10, 0.25);
   border-radius: 0;
-  background-color: red;
-  color: red;
+  
+ 
 }
 .callout > :first-child {
   margin-top: 0;
