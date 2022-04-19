@@ -1,29 +1,30 @@
 
     
 <div class="grid-x">
-    <div class ="cell-large-6">
-        <h1 style="font-size:1.5rem;"> rezervacija <i 
-        style="color:yellow" 
-        class="fas fa-1x fa-bell">
-    </i> </h1>
+<div class ="cell-large-6" style="display:flex; align-items:center">
+<p class="h1">Rezervacija</p>
+    <i 
+        style="color:#007bff; margin-left:10px" 
+        class="fas fa-2x fa-bell">
+    </i> </p>
     </div>
-</div class ="cell-large-6" style="tet-align:right;">
+
 <a href="<?=App::config('url') ?>rezervacija/novi"><i 
  style="color: green;"
  title="Dodaj novi" 
  class="fas fa-2x fa-plus"></i></a>
 
 
-<table>
-    <thead>
+<table class="table">
+    <thead class="thead-dark">
         <tr>
             <th>Datum</th>
-            <th>osoba</th>
-            <th> brojRezerviranihMjesta</th>
-            <th> mjesto</th>
-            <th> kontakt</th>
-            <th> napomena</th>
-            <th> akcija</th>
+            <th>Osoba</th>
+            <th> Broj rezerviranih mjesta</th>
+            <th> Mjesto</th>
+            <th> Kontakt</th>
+            <th> Napomena</th>
+            <th> Akcija</th>
         </tr>
     </thead>
     <tbody>
@@ -39,13 +40,13 @@
 <a href="<?=App::config('url') ?>rezervacija/promjena/<?=$z->sifra?>">
 <i style="color: black;"
  title="promjeni" 
- class="fas fa- fa-pen"></i>
+ class="fas fa-2x fa-pen"></i>
 </a>
 
 <a href="<?=App::config('url') ?>rezervacija/brisanje/<?=$z->sifra?>">
 <i style="margin-left:20px;"
  title="izbrisi" 
- class="fas fa- fa-trash"></i>
+ class="fas fa-2x fa-trash"></i>
 </a>
 </td>
 

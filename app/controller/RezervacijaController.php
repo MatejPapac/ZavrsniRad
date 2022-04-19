@@ -19,7 +19,7 @@ class RezervacijaController extends AutorizacijaController
          $this->rez->datum='';
          $this->rez->osoba='1';
          $this->rez->brojRezerviranihMjesta='';
-         $this->rez->mjesto='';
+         $this->rez->mjesto='Mjesto';
          $this->rez->kontakt='';
          $this->rez->napomena='';
    
@@ -42,7 +42,7 @@ class RezervacijaController extends AutorizacijaController
    {
        $this->view->render($this->viewDir. 'novi',[
            'poruka'=>'Popunite podatke',
-           'rezervacija'=>$this->rezervacija
+           'rezervacija'=>$this->rez
        ]);
          
       

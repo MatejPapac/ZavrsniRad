@@ -1,0 +1,39 @@
+<form action="<?=App::config('url') ?>rezeravija/dodajNovi" method="post">
+<fieldset>
+<div style="display:flex; justify-content:center ">
+    <div style="width:600px; ">
+
+<p class="h1">Rezerviraj se</p>
+<label>
+    <h3>Datum</h3>
+<label for="datumiVrijeme"></label>
+<input type="datetime-local" name="datumiVrijeme" id="sifra" value="<?=$rezervacija->datumiVrijeme?>" />
+</label>
+<h3>Osoba</h3>
+<label for="osoba"></label>
+<input type="number" name="osoba" id="sifra" value="<?=$rezervacija->osoba?>">
+<h3>Broj rezerviranih mjesta</h3>
+<label for="brojRezerviranihMjesta"></label>
+<input type="number" name="brojRezerviranihMjesta" id="sifra" value="<?=$rezervacija->brojRezerviranihMjesta?>">
+<h3>Mjesto</h3>
+<label for="mjesto"></label>
+<input type="text" name="mjesto" id="sifra" value="<?=$rezervacija->mjesto?>">
+<h3>Kontakt</h3>
+<label for="kontakt"></label>
+<input type="text" name="kontakt" id="sifra" value="<?=$rezervacija->kontakt?>">
+<h3>Napomena</h3>
+<label for="naponena"></label>
+<input type="text" name="napomena" id="sifra" value="<?=$rezervacija->napomena?>">
+<div style="display:flex; flex-direction:column;">
+    <button type="submit"  class="btn btn-primary btn-block">Dodaj</button>
+    <button  onclick="location.href = '<?=App::config('url')?>rezervacija/index';" type="button" class="btn btn-danger btn-block">Odustani</button>
+</div>
+
+</div>
+</div>
+
+
+<?=$poruka?>
+</fieldset>
+
+</form>
