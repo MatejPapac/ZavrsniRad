@@ -29,8 +29,8 @@ class Mjesto
       $veza = DB::getInstanca();
       $izraz = $veza->prepare('
       
-          insert into jelo (naziv,brojStolica)
-          values (:naziv,:BrojStolica);
+          insert into  mjesto (naziv,brojStolica)
+          values (:naziv,:brojStolica);
       
       '); 
     
@@ -65,7 +65,7 @@ class Mjesto
       
           update mjesto set
             naziv=:naziv,
-        brojStolica=:brojStolica,
+            brojStolica=:brojStolica,
       
       '); 
     
