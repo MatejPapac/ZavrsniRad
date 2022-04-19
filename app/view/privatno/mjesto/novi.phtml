@@ -1,0 +1,31 @@
+<form action="<?=App::config('url') ?>mjesto/dodajNovi" method="post">
+<fieldset>
+    <div style="display:flex; justify-content:center ">
+    <div style="width:600px; ">
+
+<p class="h1">Dodaj mjesto</p>
+
+<label>
+    <h3>Naziv</h3>
+<label for="naziv"></label>
+<input type="text" name="naziv" id="sifra" value="<?=$mjesto->naziv?>" />
+</label>
+<h3>Broj stolica</h3>
+<label for="brojStolica"></label>
+<input type="number" name="brojStolica" id="sifra" value="<?=$mjesto->brojStolica?>">
+
+
+
+
+    
+    <div style="display:flex; flex-direction:column;">
+    <button type="submit"  class="btn btn-primary btn-block">Dodaj</button>
+    <button  onclick="location.href = '<?=App::config('url')?>mjesto/index';" type="button" class="btn btn-danger btn-block">Odustani</button>
+</div>
+
+</div>
+</div>
+<?=$poruka?>
+</fieldset>
+
+</form>
