@@ -19,6 +19,7 @@
         <tr>
             <th>Naziv</th>
             <th>brojStolica</th>
+            <th>Akcija</th>
       
         </tr>
     </thead>
@@ -27,9 +28,10 @@
             <tr>
                 <td><?=$m->naziv?></td>
                 <td><?=$m->brojStolica?> </td>
+            <td>
         
                 
-        </tr>
+       
 <a href="<?=App::config('url') ?>mjesto/promjena/<?=$m->sifra?>">
 <i style="color: black;"
  title="promjeni" 
@@ -39,7 +41,7 @@
 <a href="<?=App::config('url') ?>mjesto/brisanje/<?=$m->sifra?>">
 <i style="margin-left:20px;"
  title="izbrisi" 
- class="fas fa- fa-trash"></i>
+ class="fas fa- 2x fa-trash"></i>
 </a>
 </td>
 
