@@ -17,7 +17,7 @@ class MjestoController extends AutorizacijaController
     
          $this->mjesto = new stdClass();
          $this->mjesto->naziv='';
-         $this->mjesto->brojStolica='1';
+         $this->mjesto->brojStolica='4';
     
      }
  
@@ -35,11 +35,42 @@ class MjestoController extends AutorizacijaController
      }
 
 
+    
+
+     public function kontrolaStolica()
+
+     {
+        if(strlen($this->mjesto->brojStolica)===0){
+            $this->poruka="unijeti broj stolica";
+            return false;
+
+            
+
+     }
+     return true;
+    }
+
 
        public function promjeni()
        {
+        {
     
+            $this->pripremiPodatke();
+            if ($this->kontrolaStolica()){
+           
+                Mjesto::update($_POST);
+                $this->index();
+            }else{
+                $this->view->render($this->viewDir . 'promjena' ,[
+                    'poruka'=>$this->poruka,
+                    'mjesto'=>$this->mjesto
+                ]);
+            }
+            
+          
+             }
     
+         
          
         
       
@@ -57,7 +88,17 @@ class MjestoController extends AutorizacijaController
    {
     
 
-  
+    $this->pica=(object)$_POST;
+    if (
+$this->kontrolaStolica()){
+        Mjesto::create($_POST);
+        $this->index();
+    }else{
+        $this->view->render($this->viewDir . 'novi' ,[
+            'poruka'=>$this->poruka,
+            'mjesto'=>$this->mjesto
+        ]);
+    }
 
    }
     
@@ -72,19 +113,24 @@ class MjestoController extends AutorizacijaController
         
        
     }
-   
 
-
-
-  
-  
-
-
-
-        
-      
-
-
-  
-        
+    public function novi()
+    {
+        $this->view->render($this->viewDir. 'novi',[
+            'poruka'=>'',
+            'mjesto'=>$this->mjesto
+        ]);
     }
+
+    public function promjena($id)
+    {
+        $this->mjesto=Mjesto::readOne($id);
+        $this->view->render($this->viewDir . 'promjena',[
+            'poruka'=>'',
+            'mjesto'=>$this->mjesto
+        ]);
+    }
+   
+    
+
+}
