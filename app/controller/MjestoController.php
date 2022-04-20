@@ -58,6 +58,8 @@ class MjestoController extends AutorizacijaController
     
             $this->pripremiPodatke();
             if ($this->kontrolaStolica()){
+
+               
            
                 Mjesto::update($_POST);
                 $this->index();

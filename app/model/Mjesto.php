@@ -65,7 +65,7 @@ class Mjesto
       
           update mjesto set
             naziv=:naziv,
-            brojStolica=:brojStolica,
+            brojStolica=:brojStolica
             where sifra=:sifra;
       
       '); 
