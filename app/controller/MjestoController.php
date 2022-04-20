@@ -25,7 +25,7 @@ class MjestoController extends AutorizacijaController
 
      public function index ()
      {
-     $pica = Mjesto::read();
+       Mjesto::read();
       
        
          $this->view->render($this->viewDir . 'index',[
@@ -39,9 +39,10 @@ class MjestoController extends AutorizacijaController
 
      public function kontrolaStolica()
 
-     {
-        if(strlen($this->mjesto->brojStolica)===0){
-            $this->poruka="unijeti broj stolica";
+     {  $broj = (int) trim($this->mjesto->brojStolica);
+        if($broj<=0){
+            $this->poruka='Broj stolica mora biti veci od 0 ' 
+            . $this->mjesto->brojStolica;
             return false;
 
             
@@ -88,7 +89,7 @@ class MjestoController extends AutorizacijaController
    {
     
 
-    $this->pica=(object)$_POST;
+    $this->mjesto=(object)$_POST;
     if (
 $this->kontrolaStolica()){
         Mjesto::create($_POST);

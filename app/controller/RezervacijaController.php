@@ -29,7 +29,7 @@ class RezervacijaController extends AutorizacijaController
 
      public function index ()
      {
-     $pica = Rezervacija::read();
+      Rezervacija::read();
       
        
          $this->view->render($this->viewDir . 'index',[
@@ -46,13 +46,32 @@ class RezervacijaController extends AutorizacijaController
        ]);
          
       
+   
    }
-
+   public function promjena($id)
+   {
+       $this->rez=Rezervacija::readOne($id);
+       $this->view->render($this->viewDir . 'promjena', [
+           'poruka' =>'Promijenite podatke',
+           'rezervacija'=>$this->rez
+       ]);
+   }
 
 
        public function promjeni()
        {
     
+
+        $this->pripremiPodatke();
+        if ($this->kontrolaKontakta()  ){
+            Rezervacija::update($_POST);
+            $this->index();
+        }else{
+            $this->view->render($this->viewDir . 'promjena' ,[
+                'poruka'=>$this->poruka,
+                'rez'=>$this->rez
+            ]);
+        }
     
          
         
@@ -61,7 +80,7 @@ class RezervacijaController extends AutorizacijaController
 
     private function pripremiPodatke()
     {
-        $this->pica=(object)$_POST;
+        $this->rez=(object)$_POST;
 
     }
 
@@ -70,10 +89,23 @@ class RezervacijaController extends AutorizacijaController
    public function dodajNovi()
    {
     
+    $this->rez=(object)$_POST;
+    if ($this->kontrolaKontakta()){
+        Rezervacija::create($_POST);
+        $this->index();
+    }else{
+        $this->view->render($this->viewDir . 'novi' ,[
+            'poruka'=>$this->poruka,
+            'rez'=>$this->rez
+        ]);
+    }
+    
+  
+     }
+    
 
   
-
-   }
+   
     
      public function brisanje($sifra)
     {
@@ -86,9 +118,21 @@ class RezervacijaController extends AutorizacijaController
         
        
     }
+
+
+
    
+   public function kontrolaKontakta () 
+{
 
+    if(strlen($this->rez->kontakt)===0){
+        $this->poruka="Naziv obavezno";
+        return false;
+    }
 
+}
+
+  
 
   
   
