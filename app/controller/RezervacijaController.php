@@ -42,7 +42,8 @@ class RezervacijaController extends AutorizacijaController
    {
        $this->view->render($this->viewDir. 'novi',[
            'poruka'=>'Popunite podatke',
-           'rezervacija'=>$this->rez
+           'rezervacija'=>$this->rez,
+           'mjesto'=>Mjesto::read()
        ]);
          
       
@@ -53,7 +54,8 @@ class RezervacijaController extends AutorizacijaController
        $this->rez=Rezervacija::readOne($id);
        $this->view->render($this->viewDir . 'promjena', [
            'poruka' =>'Promijenite podatke',
-           'rezervacija'=>$this->rez
+           'rezervacija'=>$this->rez,
+           'mjesto'=>Mjesto::read()
        ]);
    }
 
@@ -97,7 +99,8 @@ class RezervacijaController extends AutorizacijaController
     }else{
         $this->view->render($this->viewDir . 'novi' ,[
             'poruka'=>$this->poruka,
-            'rezervacija'=>$this->rez
+            'rezervacija'=>$this->rez,
+            'mjesto'=>Mjesto::read()
         ]);
     }
     
