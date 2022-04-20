@@ -29,11 +29,16 @@ class Rezervacija
       $izraz = $veza->prepare('
       
           insert into rezervacija (datumiVrijeme,osoba,brojRezerviranihMjesta,mjesto,kontakt,napomena)
-          values (:datumiVrijeme,:osoba,:brojRezerviranihMjesta,:mjesto,:kontakt,:napomena;
+          values (:datumiVrijeme,:osoba,:brojRezerviranihMjesta,:mjesto,:kontakt,:napomena);
       
       '); 
     
-      $izraz->execute($parametri);
+      $izraz->execute(['datumiVrijeme'=>$parametri['datumiVrijeme'],
+      'brojRezerviranihMjesta'=>$parametri['brojRezerviranihMjesta'],
+      'osoba'=>$parametri['osoba'],
+      'kontakt'=>$parametri['kontakt'],
+      'napomena'=>$parametri['napomena']
+      ]);
       
   }
   //R-Read
