@@ -29,7 +29,7 @@ class Rezervacija
       $izraz = $veza->prepare('
       
           insert into rezervacija (datumiVrijeme,osoba,brojRezerviranihMjesta,mjesto,kontakt,napomena)
-          values (:datumiVrijeme,:osoba,:brojRezerviranihMjesta,:mjesto,:kontakt,:napomena);
+          values (:datumiVrijeme,:osoba,:brojRezerviranihMjesta,:mjesto,:kontakt,:napomena;
       
       '); 
     
@@ -44,7 +44,10 @@ class Rezervacija
     $veza=DB::getInstanca();
     $izraz = $veza->prepare('
     
-    select * from rezervacija
+    select a.mjesto ,a.sifra ,a.datumiVrijeme, a.osoba, a.brojRezerviranihMjesta, c.naziv as mjestoNaziv, a.kontakt, a.napomena
+    from rezervacija a
+    inner join rezervacija_mjesto b on a.sifra=b.rezervacija
+    inner join mjesto c on c.sifra=b.mjesto
   
     
     
