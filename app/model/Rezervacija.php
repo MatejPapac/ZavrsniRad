@@ -28,8 +28,8 @@ class Rezervacija
       $veza = DB::getInstanca();
       $izraz = $veza->prepare('
       
-          insert into rezervacija (datum,osoba,brojRezerviranihMjesta,mjesto,kontakt,napomena)
-          values (:datum,:osoba,:brojRezerviranihMjesta,:mjesto,:kontakt,:napomena;
+          insert into rezervacija (datumiVrijeme,osoba,brojRezerviranihMjesta,mjesto,kontakt,napomena)
+          values (:datumiVrijeme,:osoba,:brojRezerviranihMjesta,:mjesto,:kontakt,:napomena;
       
       '); 
     

@@ -69,7 +69,7 @@ class RezervacijaController extends AutorizacijaController
         }else{
             $this->view->render($this->viewDir . 'promjena' ,[
                 'poruka'=>$this->poruka,
-                'rez'=>$this->rez
+                'rezervacija'=>$this->rez
             ]);
         }
     
@@ -91,12 +91,13 @@ class RezervacijaController extends AutorizacijaController
     
     $this->rez=(object)$_POST;
     if ($this->kontrolaKontakta()){
+       
         Rezervacija::create($_POST);
         $this->index();
     }else{
         $this->view->render($this->viewDir . 'novi' ,[
             'poruka'=>$this->poruka,
-            'rez'=>$this->rez
+            'rezervacija'=>$this->rez
         ]);
     }
     
