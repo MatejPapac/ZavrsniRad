@@ -61,15 +61,18 @@ class Mjesto
   public static function update($parametri)
   {
       $veza = DB::getInstanca();
-      $izraz = $veza->prepare('
+      $izraz = $veza->prepare(' 
       
           update mjesto set
             naziv=:naziv,
             brojStolica=:brojStolica,
+            where sifra=:sifra;
       
       '); 
     
-      $izraz->execute($parametri);
+      $izraz->execute(['naziv'=>$parametri['naziv'],
+                       'brojStolica'=>$parametri['brojStolica'],
+                       'sifra'=>$parametri['sifra']]);
   }
 
   //D-Delete
