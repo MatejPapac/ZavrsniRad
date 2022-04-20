@@ -3,7 +3,7 @@
 <div style="display:flex; justify-content:center ">
     <div style="width:600px; ">
 
-<p class="h1">Uredi rezervaciju</p>
+<p class="h1">Ispravi rezervaciju</p>
 <label>
     <h3>Datum</h3>
 <label for="datumiVrijeme"></label>
@@ -17,7 +17,14 @@
 <input type="number" name="brojRezerviranihMjesta" id="sifra" value="<?=$rezervacija->brojRezerviranihMjesta?>">
 <h3>Mjesto</h3>
 <label for="mjesto"></label>
-<input type="text" name="mjesto" id="sifra" value="<?=$rezervacija->mjesto?>">
+<select name="mjesto" id="">
+    <option value="0">
+        Odaberite mjesto
+    </option>
+    <?php foreach($lista as $mjesta) :?>
+                <option value="<?= $mjesta->sifra ?>" ><?= $mjesta->naziv ?></option>
+        <?php endforeach; ?>
+</select>
 <h3>Kontakt</h3>
 <label for="kontakt"></label>
 <input type="text" name="kontakt" id="sifra" value="<?=$rezervacija->kontakt?>">
@@ -37,3 +44,4 @@
 </fieldset>
 
 </form>
+    
