@@ -33,9 +33,11 @@ class Rezervacija
       
       '); 
     
-      $izraz->execute(['datumiVrijeme'=>$parametri['datumiVrijeme'],
-      'brojRezerviranihMjesta'=>$parametri['brojRezerviranihMjesta'],
+      $izraz->execute(
+      ['datumiVrijeme'=>$parametri['datumiVrijeme'],
       'osoba'=>$parametri['osoba'],
+      'brojRezerviranihMjesta'=>$parametri['brojRezerviranihMjesta'],
+      'mjesto'=>$parametri['mjesto'],
       'kontakt'=>$parametri['kontakt'],
       'napomena'=>$parametri['napomena']
       ]);
