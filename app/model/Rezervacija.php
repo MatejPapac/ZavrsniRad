@@ -29,7 +29,7 @@ class Rezervacija
       $izraz = $veza->prepare('
       
           insert into rezervacija (datumiVrijeme,osoba,brojRezerviranihMjesta,mjesto,kontakt,napomena)
-          values (:datumiVrijeme,:osoba,:brojRezerviranihMjesta,:mjesto,:kontakt,:napomena;
+          values (:datumiVrijeme,:osoba,:brojRezerviranihMjesta,:mjesto,:kontakt,:napomena);
       
       '); 
     
