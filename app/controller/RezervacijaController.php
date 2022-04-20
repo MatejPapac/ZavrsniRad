@@ -129,6 +129,7 @@ class RezervacijaController extends AutorizacijaController
         $this->poruka="Naziv obavezno";
         return false;
     }
+    return true;
 
 }
 
