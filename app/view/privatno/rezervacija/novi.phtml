@@ -17,12 +17,11 @@
 <input type="number" name="brojRezerviranihMjesta" id="sifra" value="<?=$rezervacija->brojRezerviranihMjesta?>">
 <h3>Mjesto</h3>
 <label for="mjesto"></label>
-<select name="mjesto" id="mjesto">
+<select name="mjesto" id="sifra">
     <option value="0">
         Odaberite mjesto
     </option>
     <?php foreach($mjesto as $mjesta) :?>
-        <?php foreach ($mjesta as $mjesto) : ?>
                 <option value="<?= $mjesta->sifra ?>" <?php if($mjesta->sifra == $naziv->mjesto) echo 'selected="selected"';?>><?= $mjesta->naziv ?></option>
         <?php endforeach; ?>
 </select>
@@ -45,3 +44,4 @@
 </fieldset>
 
 </form>
+    
