@@ -7,23 +7,23 @@
 <label>
     <h3>Datum</h3>
 <label for="datumiVrijeme"></label>
-<input type="datetime-local" name="datumiVrijeme" id="sifra" value="<?=$rezervacija->datumiVrijeme?>" />
+<input type="datetime-local" name="datumiVrijeme" id="sifra" value="<?=$rez->datumiVrijeme?>" />
 </label>
 <h3>Osoba</h3>
 <label for="osoba"></label>
-<input type="number" name="osoba" id="sifra" value="<?=$rezervacija->osoba?>">
+<input type="number" name="osoba" id="sifra" value="<?=$rez->osoba?>">
 <h3>Broj rezerviranih mjesta</h3>
 <label for="brojRezerviranihMjesta"></label>
-<input type="number" name="brojRezerviranihMjesta" id="sifra" value="<?=$rezervacija->brojRezerviranihMjesta?>">
+<input type="number" name="brojRezerviranihMjesta" id="sifra" value="<?=$rez->brojRezerviranihMjesta?>">
 <h3>Mjesto</h3>
 <label for="mjesto"></label>
-<input type="text" name="mjesto" id="sifra" value="<?=$rezervacija->mjesto?>">
+<input type="text" name="mjesto" id="sifra" value="<?=$rez->mjesto?>">
 <h3>Kontakt</h3>
 <label for="kontakt"></label>
-<input type="text" name="kontakt" id="sifra" value="<?=$rezervacija->kontakt?>">
+<input type="text" name="kontakt" id="sifra" value="<?=$rez->kontakt?>">
 <h3>Napomena</h3>
 <label for="naponena"></label>
-<input type="text" name="napomena" id="sifra" value="<?=$rezervacija->napomena?>">
+<input type="text" name="napomena" id="sifra" value="<?=$rez->napomena?>">
 <div style="display:flex; flex-direction:column;">
     <button type="submit"  class="btn btn-primary btn-block">Dodaj</button>
     <button  onclick="location.href = '<?=App::config('url')?>rezervacija/index';" type="button" class="btn btn-danger btn-block">Odustani</button>
