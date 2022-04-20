@@ -93,9 +93,9 @@ class RezervacijaController extends AutorizacijaController
     
     $this->rez=(object)$_POST;
     if ($this->kontrolaKontakta()){
-       print_r($_POST);
+      
         Rezervacija::create($_POST);
-       // $this->index();
+        $this->index();
     }else{
         $this->view->render($this->viewDir . 'novi' ,[
             'poruka'=>$this->poruka,

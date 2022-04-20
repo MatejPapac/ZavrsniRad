@@ -53,8 +53,9 @@ class Rezervacija
     
     select a.mjesto ,a.sifra ,a.datumiVrijeme, a.osoba, a.brojRezerviranihMjesta, c.naziv as mjestoNaziv, a.kontakt, a.napomena
     from rezervacija a
-    inner join rezervacija_mjesto b on a.sifra=b.rezervacija
-    inner join mjesto c on c.sifra=b.mjesto
+   left join rezervacija_mjesto b on a.sifra=b.rezervacija
+   left join mjesto c on c.sifra=b.mjesto
+  
   
     
     
@@ -82,7 +83,14 @@ class Rezervacija
  
       '); 
     
-      $izraz->execute($parametri);
+      $izraz->execute(
+        ['datumiVrijeme'=>$parametri['datumiVrijeme'],
+        'osoba'=>$parametri['osoba'],
+        'brojRezerviranihMjesta'=>$parametri['brojRezerviranihMjesta'],
+        'mjesto'=>$parametri['mjesto'],
+        'kontakt'=>$parametri['kontakt'],
+        'napomena'=>$parametri['napomena']
+        ]);
   }
 
   //D-Delete
